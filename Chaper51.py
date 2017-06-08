@@ -1,6 +1,6 @@
 from tensorflow.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets("D:\\tmp\\tensorflow\\mnist\\input_data", one_hot=True)
+mnist = input_data.read_data_sets("MNIST_data", one_hot=True)
 
 print("Training data size: ", mnist.train.num_examples)
 print("Validation data size: ", mnist.validation.num_examples)
