@@ -46,7 +46,7 @@ def train(mnist):
 
     average_y = inference(x, variable_averages, weights1, biases1, weights2, biases2)
 
-    cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(y, tf.argmax(y_, 1))
+    cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=y, labels=tf.argmax(y_, 1))
     cross_entropy_mean = tf.reduce_mean(cross_entropy)
 
     regularizer = tf.contrib.layers.l2_regularizer(REGULARIZATION_RATE)
