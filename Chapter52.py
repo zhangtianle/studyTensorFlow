@@ -12,7 +12,7 @@ BATCH_SIZE = 100
 LEARNING_RATE_BASE = 0.8
 LEARNING_RATE_DECAY = 0.99
 REGULARIZATION_RATE = 0.0001
-TRANING_STEPS = 30000
+TRAINING_STEPS = 30000
 MOVING_AVERAGE_DECAY = 0.99
 
 
@@ -70,7 +70,7 @@ def train(mnist):
 
         test_feed = {x: mnist.test.images, y_: mnist.test.labels}
 
-        for i in range(TRANING_STEPS):
+        for i in range(TRAINING_STEPS):
             if i % 1000 == 0:
                 validate_acc = sess.run(accuracy, feed_dict=validate_feed)
                 print("After %d training step(s), validation accracy using average model is %g " % (i, validate_acc))
@@ -79,7 +79,7 @@ def train(mnist):
             sess.run(train_op, feed_dict={x: xs, y_: ys})
 
         test_acc = sess.run(accuracy, feed_dict=test_feed)
-        print("After %d training step(s), test accuracy using averags model is %g " % (TRANING_STEPS, test_acc))
+        print("After %d training step(s), test accuracy using averags model is %g " % (TRAINING_STEPS, test_acc))
 
 
 def main(argv=None):
